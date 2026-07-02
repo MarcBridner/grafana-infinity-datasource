@@ -167,7 +167,10 @@ func TestAllSettingsAgainstFrontEnd(t *testing.T) {
 			"aws" : {
 				"authType" 	: "keys",
 				"region" 	: "region1",
-				"service" 	: "service1"
+				"service" 	: "service1",
+				"assumeRoleARN" : "arn:aws:iam::123456789012:role/TestRole",
+				"externalID" : "ext-123",
+				"profile" : "my-profile"
 			},
 			"oauth2" : {
 				"client_id":"myClientID",
@@ -217,9 +220,12 @@ func TestAllSettingsAgainstFrontEnd(t *testing.T) {
 		AWSAccessKey:         "awsAccessKey1",
 		AWSSecretKey:         "awsSecretKey1",
 		AWSSettings: models.AWSSettings{
-			AuthType: models.AWSAuthTypeKeys,
-			Service:  "service1",
-			Region:   "region1",
+			AuthType:      models.AWSAuthTypeKeys,
+			Service:       "service1",
+			Region:        "region1",
+			AssumeRoleARN: "arn:aws:iam::123456789012:role/TestRole",
+			ExternalID:    "ext-123",
+			Profile:       "my-profile",
 		},
 		OAuth2Settings: models.OAuth2Settings{
 			ClientID:     "myClientID",

@@ -57,13 +57,17 @@ type OAuth2Settings struct {
 type AWSAuthType string
 
 const (
-	AWSAuthTypeKeys AWSAuthType = "keys"
+	AWSAuthTypeKeys    AWSAuthType = "keys"
+	AWSAuthTypeDefault AWSAuthType = "default"
 )
 
 type AWSSettings struct {
-	AuthType AWSAuthType `json:"authType"`
-	Region   string      `json:"region"`
-	Service  string      `json:"service"`
+	AuthType      AWSAuthType `json:"authType"`
+	Region        string      `json:"region"`
+	Service       string      `json:"service"`
+	AssumeRoleARN string      `json:"assumeRoleARN"`
+	ExternalID    string      `json:"externalID"`
+	Profile       string      `json:"profile"`
 }
 
 type ProxyType string
